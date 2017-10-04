@@ -16,6 +16,7 @@ import { AnimalsPageComponent } from './pages/animals-page/animals-page.componen
 import { SheltersPageComponent } from './pages/shelters-page/shelters-page.component';
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 import { SignupComponent } from './component/signup/signup.component';
+import { LogoutComponent } from './component/logout/logout.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -34,7 +35,8 @@ const routes: Routes = [
     AnimalsPageComponent,
     SheltersPageComponent,
     SignupPageComponent,
-    SignupComponent
+    SignupComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
