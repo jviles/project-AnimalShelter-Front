@@ -1,6 +1,12 @@
 <div class="page animals">
   <div class="container">
+    
     <p>here goes the animal search component</p>
     <p>here goes the animal list component</p>
+    <ul>
+      <li *ngFor="let animal of animals">
+        {{animal.name}}
+      </li>
+    </ul>
   </div>  
 </div>
