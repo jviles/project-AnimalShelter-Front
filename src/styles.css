@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    margin:0;
+    padding:0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+
+/* --------------------------------- header --------------------------------- */
+
+.site-header {
+    overflow: hidden;
+    background-color: #C7C7C7;
+}
+
+.site-header h1 {
+    float: left;
+    margin:0;
+    padding:20px 0;
+}    
+
+.site-header nav {
+    float: right;
+    margin:0;
+    padding:20px 0;
+}    
+
+.site-header nav ul {
+    list-style: none;
+}
+    
+.site-header nav li {
+    float: left;
+}     
+
+.site-header nav a {
+    padding: 5px 10px;
+}    
