@@ -6,9 +6,24 @@ body {
 
 .container {
     max-width: 900px;
-    margin: 0 auto;
+    margin: 0 10px;
 }
 
+@media(min-width:768px) {
+    .container {
+        margin: 0 20px;
+    }
+}
+
+@media(min-width:940px) {
+    .container {
+        margin: 0 auto;
+    }
+}
+
+.page {
+    padding-top: 20px;
+}
 
 
 /* --------------------------------- header --------------------------------- */
