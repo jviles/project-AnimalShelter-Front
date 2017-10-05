@@ -1,8 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule,ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
+
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 
@@ -19,6 +21,8 @@ import { SignupComponent } from './component/signup/signup.component';
 import { LogoutComponent } from './component/logout/logout.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { LoginComponent } from './component/login/login.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { MapComponent } from './component/map/map.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -27,7 +31,8 @@ const routes: Routes = [
   { path: 'animals', component: AnimalsPageComponent },
   { path: 'shelters', component: SheltersPageComponent },
   { path: 'signup', component: SignupPageComponent },
-  { path: 'login', component: LoginPageComponent }
+  { path: 'login', component: LoginPageComponent },
+  { path: 'profile', component: ProfilePageComponent },
 ];
 
 @NgModule({
@@ -41,13 +46,16 @@ const routes: Routes = [
     SignupComponent,
     LogoutComponent,
     LoginPageComponent,
-    LoginComponent
+    LoginComponent,
+    ProfilePageComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
-    RouterModule.forRoot(routes)  //  <!-- "routes" is the array defined above
+    RouterModule.forRoot(routes),  //  <!-- "routes" is the array defined above
+    AgmCoreModule.forRoot({apiKey:'AIzaSyDH2gSa8sT1qqiKZHQ6Rdy-sF1U6YaEwnU'})
   ],
   providers: [AnimalsService,SheltersService,AuthService],
   bootstrap: [AppComponent]
