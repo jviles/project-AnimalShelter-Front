@@ -17,6 +17,8 @@ import { SheltersPageComponent } from './pages/shelters-page/shelters-page.compo
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { LogoutComponent } from './component/logout/logout.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { LoginComponent } from './component/login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -24,7 +26,8 @@ const routes: Routes = [
   { path: 'info', component: InformationPageComponent },
   { path: 'animals', component: AnimalsPageComponent },
   { path: 'shelters', component: SheltersPageComponent },
-  { path: 'signup', component: SignupPageComponent }
+  { path: 'signup', component: SignupPageComponent },
+  { path: 'login', component: LoginPageComponent }
 ];
 
 @NgModule({
@@ -36,7 +39,9 @@ const routes: Routes = [
     SheltersPageComponent,
     SignupPageComponent,
     SignupComponent,
-    LogoutComponent
+    LogoutComponent,
+    LoginPageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
