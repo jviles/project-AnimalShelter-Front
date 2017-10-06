@@ -10,6 +10,7 @@ body {
     margin:0;
     padding:0;
     font-family: Roboto, Helvetica, Arial, sans-serif;
+    color: #333333;
 }
 
 .container {
@@ -31,6 +32,11 @@ body {
 
 .page {
     padding-top: 20px;
+}
+
+.page-title {
+    margin: 0 0 30px;
+    font-size: 32px;
 }
 
 

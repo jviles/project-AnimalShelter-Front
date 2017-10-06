@@ -19,7 +19,7 @@ export class AuthService {
   private user: User;
   private userChange: Subject<User | null> = new Subject();
 
-  // Observable string stream
+  // Observable user stream
   userChange$ = this.userChange.asObservable();
 
   constructor(private http: Http) { }
@@ -27,6 +27,10 @@ export class AuthService {
   private setUser(user: User = null) {
     this.user = user;
     this.userChange.next(user);
+  }
+
+  getUser() : User | null {
+    return this.user;
   }
 
   signup(user: User) {
@@ -37,6 +41,8 @@ export class AuthService {
         let user = new User(res.json());
         this.setUser(user);
         return user;
+      }).catch(err => {
+        throw err.json();
       });
   }
 
@@ -48,6 +54,8 @@ export class AuthService {
         let user = new User(res.json());
         this.setUser(user);
         return user;
+      }).catch(err => {
+        throw err.json();
       });
   }
 

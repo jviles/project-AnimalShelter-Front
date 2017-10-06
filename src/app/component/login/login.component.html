@@ -1,14 +1,20 @@
-<form [ngClass]="{'has-error': error}" novalidate>
-  <div class="form-group field" [ngClass]="{'has-error': error}">
+<form #form="ngForm" [ngClass]="{'has-error': error}" novalidate>
+
+  <div class="form-group field" [ngClass]="{'has-error': submitted && username.invalid}">
     <label>Username</label>
-    <input type="text" [(ngModel)]="user.username" name="username" required/>
+    <input  #username="ngModel" type="text" [(ngModel)]="user.username" name="username" required/>
+    <p *ngIf="username.invalid" class="error">Please enter your username</p>    
   </div>
-  <div class="form-group field" [ngClass]="{'has-error': error}">
+
+  <div class="form-group field" [ngClass]="{'has-error': submitted && password.invalid}">
     <label>Password</label>
-    <input type="password" [(ngModel)]="user.password" name="password" required/>
+    <input  #password="ngModel" type="password" [(ngModel)]="user.password" name="password" required/>
+    <p *ngIf="password.invalid" class="error">Please enter your password</p>    
   </div>
-  <div class="form-group actions">
-    <button (click)="login()">login</button>
+
+  <div class="form-group actions" [ngClass]="{'has-error': error}">
+    <button (click)="login(form)">login</button>
     <p *ngIf="error" class="error">{{error}}</p>
   </div>
+
 </form>

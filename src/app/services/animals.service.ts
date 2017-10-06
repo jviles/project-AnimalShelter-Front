@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
@@ -11,7 +11,9 @@ export class AnimalsService {
   constructor(private http: Http) { }
 
   getAnimals() {
-    return this.http.get(baseUrl + '/animals')
+    let options = new RequestOptions();
+    options.withCredentials = true;    
+    return this.http.get(baseUrl + '/animals', options)
       .map((res) => res.json());
   }
 

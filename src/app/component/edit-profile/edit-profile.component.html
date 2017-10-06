@@ -1,0 +1,16 @@
+<div class="loading" *ngIf="loading">...loading</div>
+
+<form *ngIf="!loading" #form="ngForm" [ngClass]="{'has-error': error}" novalidate>
+
+    <div class="form-group field" [ngClass]="{'has-error': submitted && username.invalid}">
+      <label>Username</label>
+      <input  #username="ngModel" type="text" [(ngModel)]="user.username" name="username" required/>
+      <p *ngIf="username.invalid" class="error">Please enter your username</p>    
+    </div>
+    
+    <div class="form-group actions" [ngClass]="{'has-error': error}">
+      <button (click)="save(form)">save</button>
+      <p *ngIf="error" class="error">{{error}}</p>
+    </div>
+  
+</form>

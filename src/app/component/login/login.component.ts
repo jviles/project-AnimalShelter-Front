@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { User } from '../../model/user.model';
 import { AuthService } from '../../services/auth.service';
-
 
 @Component({
   selector: 'app-login',
@@ -15,18 +16,30 @@ export class LoginComponent implements OnInit {
     password: ''
   });
 
+  submitted: boolean;
   error: string;
 
-  constructor(private auth: AuthService) { }
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
   
-  login() {
+  login(form) {
     this.error = null;
+    this.submitted = true;
+    if (!form.valid) {
+      return false;
+    }
     this.auth.login(this.user).subscribe(
-      (user) => this.user = user,
-      (err) => this.error = err
+      (user) => { 
+        this.router.navigate(['/profile'])
+      },
+      (err) => {
+        this.error = (err && err.error) ? err.error : 'Unexpected error, please try again.';
+      } 
     );
   }
 

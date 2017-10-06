@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { User } from '../../model/user.model';
 import { AuthService } from '../../services/auth.service';
@@ -18,7 +19,10 @@ export class SignupComponent implements OnInit {
   submitted: boolean;
   error: string;
 
-  constructor(private auth: AuthService) { }
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
@@ -31,10 +35,11 @@ export class SignupComponent implements OnInit {
     }
     this.auth.signup(this.user).subscribe(
       (user) => { 
-        console.log(user);
+        this.router.navigate(['/profile'])
       },
-
-      (err) => this.error = err
+      (err) => {
+        this.error = (err && err.error) ? err.error : 'Unexpected error, please try again.';
+      } 
     );
   }
 
