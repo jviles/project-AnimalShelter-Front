@@ -1,14 +1,21 @@
-<form [ngClass]="{'has-error': error}" novalidate>
-    <div class="form-group field" [ngClass]="{'has-error': error}">
-      <label>Username</label>
-      <input type="text" [(ngModel)]="user.username" name="username" required/>
-    </div>
-    <div class="form-group field" [ngClass]="{'has-error': error}">
-      <label>Password</label>
-      <input type="password" [(ngModel)]="user.password" name="password" required/>
-    </div>
-    <div class="form-group actions">
-      <button (click)="signup()">signup</button>
-      <p *ngIf="error" class="error">{{error}}</p>
-    </div>
-  </form>
+<form #form="ngForm" [ngClass]="{'has-error': error}" novalidate>
+
+  <div class="form-group field" [ngClass]="{'has-error': submitted && username.invalid}">
+    <label>Username</label>
+    <input #username="ngModel" type="text" [(ngModel)]="user.username" name="username" required/>
+    <p *ngIf="username.invalid" class="error">Please enter your username</p>
+  </div>
+
+  <div class="form-group field" [ngClass]="{'has-error': submitted && password.invalid}">
+    <label>Password</label>
+    <input #password="ngModel" type="password" [(ngModel)]="user.password" name="password" required minlength="6"/>
+    <p *ngIf="password.invalid && password.errors.required" class="error">Please enter your password</p>
+    <p *ngIf="password.invalid && password.errors.minlength" class="error">Password must be 6 charaters long</p>
+  </div>
+
+  <div class="form-group actions" [ngClass]="{'has-error': error}">
+    <button (click)="signup(form)">signup</button>
+    <p *ngIf="error" class="error">{{error}}</p>
+  </div>
+
+</form>

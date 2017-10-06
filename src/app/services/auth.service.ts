@@ -8,7 +8,7 @@ import 'rxjs/add/operator/catch';
 
 
 import { environment } from '../../environments/environment';
-import { User } from '../model/events/user.model';
+import { User } from '../model/user.model';
 
 const apiUrl = environment.apiUrl + '/auth';
 
@@ -64,7 +64,7 @@ export class AuthService {
   me() {
     let options = new RequestOptions();
     options.withCredentials = true;
-    return this.http.get(apiUrl + '/me', options)
+    return this.http.get(apiUrl + '/profile', options)
       .map(res => {
         let user = new User(res.json());
         this.setUser(user);

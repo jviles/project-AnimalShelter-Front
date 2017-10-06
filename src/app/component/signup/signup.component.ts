@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { User } from '../../model/events/user.model';
+import { User } from '../../model/user.model';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -12,10 +12,10 @@ export class SignupComponent implements OnInit {
 
   user = new User({
     username: '',
-    email: '',
     password: ''
   });
 
+  submitted: boolean;
   error: string;
 
   constructor(private auth: AuthService) { }
@@ -23,10 +23,17 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
   }
 
-  signup() {
+  signup(form) {
     this.error = null;
+    this.submitted = true;
+    if (!form.valid) {
+      return false;
+    }
     this.auth.signup(this.user).subscribe(
-      (user) => this.user = user,
+      (user) => { 
+        console.log(user);
+      },
+
       (err) => this.error = err
     );
   }
