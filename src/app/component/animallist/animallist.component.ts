@@ -2,7 +2,6 @@ import { Component, OnInit,Input } from '@angular/core';
 import { SheltersService } from '../../services/shelters.service';
 import { AuthService } from '../../services/auth.service';
 import { AnimalsService } from '../../services/animals.service';
-
 import { Animals } from '../../model/Animals.model';
 
 
@@ -15,6 +14,7 @@ import { Animals } from '../../model/Animals.model';
 export class AnimallistComponent implements OnInit {
   @Input () currentShelter;
   animalList: object[];
+  results: string;
 
   constructor(private shelter:SheltersService, private animals:AnimalsService) { }
 
@@ -25,6 +25,15 @@ export class AnimallistComponent implements OnInit {
   getAnimals(){
     this.animals.getAnimals().subscribe((Animals)=> {
       this.animalList=Animals;
+    });
+  }
+
+  handleNewAnimal(form) {
+    const newAnimal = {name: form.value.name};
+    this.animals.postNewAnimal(newAnimal).subscribe(res => {
+    this.results = res;
+    console.log (newAnimal);
+    this.getAnimals();
     });
   }
 

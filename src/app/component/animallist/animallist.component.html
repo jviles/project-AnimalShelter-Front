@@ -31,20 +31,10 @@
     <input type="text" name="description" [(ngModel)]="hates">
     <label>loves</label>
     <input type="text" name="description" [(ngModel)]="loves">
-    <label>Going out & Sociability</label>
-    <input type="text" name="description" [(ngModel)]="Going out & Sociability">
+    <label>Going out and Sociability</label>
+    <input type="text" name="description" [(ngModel)]="goingoutysociability">
     <label>A little of my past</label>
-    <input type="text" name="description" [(ngModel)]="A little of my past">
+    <input type="text" name="description" [(ngModel)]="alittleofmypast">
   <button type="submit">Add</button>
 </form>
 
-<ul>
-  <li *ngFor="let ingredient of ingredientList">
-    name: {{ ingredient.name }} <br>
-    description: {{ ingredient.description }} <br>
-    image: {{ ingredient.image }} <br>
-    <label>quantity</label>
-    <input type="number" #quantity>
-    <button (click)="handleAddToDish(currentRecipe._id, ingredient._id, quantity.value)">Add</button>
-  </li>
-</ul>
