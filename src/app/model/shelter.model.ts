@@ -9,3 +9,4 @@ export class Shelter {
     Object.assign(this, obj);
   }
 }
+// Aqui tindriem que ficar els animals

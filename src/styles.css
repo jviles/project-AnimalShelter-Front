@@ -85,11 +85,12 @@ button {
 
 .site-header {
     overflow: hidden;
-    background-color: #C7C7C7;
+    background-color: white;
 }
 
 .site-header h1 {
-    float: left;
+    /*float: left;*/
+    text-align: center;
     margin:0;
     padding:20px 0;
 }    
@@ -111,3 +112,14 @@ button {
 .site-header nav a {
     padding: 5px 10px;
 }    
+/* --------------------------------- Home Page --------------------------------- */
+.containerhome page{
+color:blue;
+
+}
+#left {
+    float: right;
+}
+#right {
+    float: left;
+}

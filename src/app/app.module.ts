@@ -25,6 +25,7 @@ import { ProfilePageComponent } from './pages/profile-page/profile-page.componen
 import { MapComponent } from './component/map/map.component';
 import { EditProfileComponent } from './component/edit-profile/edit-profile.component';
 import { EditShelterComponent } from './component/edit-shelter/edit-shelter.component';
+import { ShelterlistComponent } from './component/shelterlist/shelterlist.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -53,6 +54,7 @@ const routes: Routes = [
     MapComponent,
     EditProfileComponent,
     EditShelterComponent,
+    ShelterlistComponent,
   ],
   imports: [
     BrowserModule,
