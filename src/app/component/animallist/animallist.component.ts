@@ -12,7 +12,7 @@ import { Animals } from '../../model/Animals.model';
   styleUrls: ['./animallist.component.css']
 })
 export class AnimallistComponent implements OnInit {
-  @Input () currentShelter;
+  
   animalList: object[];
   results: string;
 

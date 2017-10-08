@@ -14,7 +14,7 @@ const apiUrl = environment.apiUrl + '/auth';
 
 @Injectable()
 export class AuthService {
-
+  BASE_URL: string = 'http://localhost:3000';
   private initialized: boolean;
   private user: User;
   private userChange: Subject<User | null> = new Subject();
@@ -31,6 +31,11 @@ export class AuthService {
 
   getUser() : User | null {
     return this.user;
+  }
+
+  get(id: string) {
+    return this.http.get(`${this.BASE_URL}/login/${id}`)
+      .map((res) => res.json());
   }
 
   signup(user: User) {

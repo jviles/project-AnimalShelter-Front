@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthService } from '../../services/auth.service';
@@ -13,6 +13,7 @@ import { SheltersService } from '../../services/shelters.service';
   styleUrls: ['./edit-shelter.component.css']
 })
 export class EditShelterComponent implements OnInit {
+  @Input () currentUser;
 
   newshelter= new Shelter ({
 
@@ -21,7 +22,7 @@ export class EditShelterComponent implements OnInit {
     number: '',
     zipcode: '',
   })
-  results; 
+  results: string; 
   loading = true;
   submitted: boolean;
   error: string;
@@ -44,19 +45,13 @@ export class EditShelterComponent implements OnInit {
      this.newshelter = Shelter;
   });
   
-  /*save(form) {
-    this.error = null;
-    this.submitted =true;
-    if (!form.valid) {
-      return false;
-    }
-    
-    this.shelter.createShelter().subscribe(res => {
+  /* No se si això es una anada de xamba meva pero crec que es faria aixi ficar el id de usuari al shelter
+   
+  handlegetUserId (userId: string){
+    this.shelter.postUser(userId).subscribe( res =>{
       this.results = res;
-    this.getShelters();
     });
-  } 
-  }*/
+  } */
   
 }
 }
