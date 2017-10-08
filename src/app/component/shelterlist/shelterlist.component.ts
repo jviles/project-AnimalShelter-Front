@@ -31,6 +31,7 @@ export class ShelterlistComponent implements OnInit {
       this.authService.get(id)
       .subscribe((User) => {
         this.User = User;
+        console.log (User);
       });
     }
   

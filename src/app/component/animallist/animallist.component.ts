@@ -28,7 +28,7 @@ export class AnimallistComponent implements OnInit {
     });
   }
 
-  handleNewAnimal(form) {
+  handleNewAnimal(form) {// tens que acabar de ficar la resta de valors del formulari aqui
     const newAnimal = {name: form.value.name};
     this.animals.postNewAnimal(newAnimal).subscribe(res => {
     this.results = res;
