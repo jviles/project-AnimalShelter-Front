@@ -19,7 +19,7 @@ import { ShelterlistComponent } from '../shelterlist/shelterlist.component';
 export class EditShelterComponent implements OnInit {
   @Input () currentUser;
 
-  newShelter: Shelter;
+  newShelter: Shelter= new Shelter;
 
   shelterList : Object [];
   results: string; 

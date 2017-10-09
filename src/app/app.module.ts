@@ -27,6 +27,10 @@ import { EditProfileComponent } from './component/edit-profile/edit-profile.comp
 import { EditShelterComponent } from './component/edit-shelter/edit-shelter.component';
 import { ShelterlistComponent } from './component/shelterlist/shelterlist.component';
 import { AnimallistComponent } from './component/animallist/animallist.component';
+import { AnimalprofilePageComponent } from './pages/animalprofile-page/animalprofile-page.component';
+
+
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -37,6 +41,9 @@ const routes: Routes = [
   { path: 'signup', component: SignupPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'profile', component: ProfilePageComponent },
+  { path: 'animalprofile', component: AnimalprofilePageComponent },
+  
+  
 ];
 
 @NgModule({
@@ -57,6 +64,8 @@ const routes: Routes = [
     EditShelterComponent,
     ShelterlistComponent,
     AnimallistComponent,
+    AnimalprofilePageComponent,
+    
   ],
   imports: [
     BrowserModule,
