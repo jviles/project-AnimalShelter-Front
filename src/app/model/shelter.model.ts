@@ -1,6 +1,6 @@
 export class Shelter {
   id: string;
-  sheltername: string;
+  name: string;
   direction: string;
   number: number;
   zipcode: number;

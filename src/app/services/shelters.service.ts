@@ -17,24 +17,21 @@ export class SheltersService {
   getShelters() {
     let options = new RequestOptions();
     options.withCredentials = true;
-    return this.http.get(baseUrl + '/shelters', options)
+    return this.http.get(baseUrl + '/shelter', options)
       .map((res) => res.json());
   }
 
   getShelterByUserId(userId) {
     let options = new RequestOptions();
     options.withCredentials = true;
-    return this.http.get(baseUrl+ '/shelter',userId)
-    .map((res) => res.json());
-    // return this.http.get(baseUrl + '/shelters/by-user/' + userId, shelter, options)
-
-    // NOTE: needs to create express route get('/by-user/:userId', (req, res, next) .... will find and return shelter where userId: req.params.userId
+    return this.http.get(baseUrl + '/shelter/by-user/' + userId, options)
+      .map((res) => res.json());
   }
 
   createShelter(shelter: Shelter) {
     let options = new RequestOptions();
     options.withCredentials = true;
-    return this.http.get(baseUrl+ '/shelters', options)
+    return this.http.post(baseUrl + '/shelter', shelter, options)
     .map((res) => res.json());
     // return this.http.post(baseUrl + '/shelters', shelter, options)
 

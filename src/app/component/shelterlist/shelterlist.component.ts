@@ -16,23 +16,12 @@ export class ShelterlistComponent implements OnInit {
   shelters: Object[];
   User: string;
   
-    constructor(private route: ActivatedRoute,private sheltersService: SheltersService, private authService: AuthService) { }
-  
-    ngOnInit() {
-      this.sheltersService.getShelters().subscribe((shelters) => {
-        this.shelters = shelters;
-      });
-      this.route.params.subscribe(params => {
-        this.getUserInfo(params['id']);
-      });
-    }
-    //podria fer-ho amb login? Preguntar a Andre. como collons puc veure lo puto Id
-    getUserInfo(id) {
-      this.authService.get(id)
-      .subscribe((User) => {
-        this.User = User;
-        console.log (User);
-      });
-    }
-  
+  constructor(private route: ActivatedRoute,private sheltersService: SheltersService, private authService: AuthService) { }
+
+  ngOnInit() {
+    this.sheltersService.getShelters().subscribe((shelters) => {
+      this.shelters = shelters;
+    });
   }
+
+}
