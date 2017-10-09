@@ -18,7 +18,8 @@ import { ShelterlistComponent } from '../shelterlist/shelterlist.component';
 })
 export class EditShelterComponent implements OnInit {
   @Input () currentUser;
-  
+
+  newShelter: Shelter;
 
   shelterList : Object [];
   results: string; 
@@ -45,25 +46,26 @@ export class EditShelterComponent implements OnInit {
     this.shelter.getShelters()
     .subscribe((Shelter) => {
      this.shelterList = Shelter;
-  });
-/* Preguntar a l'Andre perque no funciona aixi
-  save(form) {
-      
-      this.shelter.createShelter(this.newshelter)
-      .subscribe(res => {
-        this.results = res;
-      this.getShelters();
+      });
+  }
+
+  // Preguntar a l'Andre perque no funciona aixi
+  /*
+  save() {
+    this.shelter.createShelter(shelter).subscribe(res => {
+    this.results = res;
+    console.log (this.shelter);
+    this.getShelters();
       });
   }*/
-  /*
-  handleNewShelter(Form) {
-    const newShelter = {sheltername: form.value.sheltername,direction: form.value.direction,number: form.value.number,zipcode: form.value.zipcode};
-    this.shelter.createShelter(newShelter).subscribe(res => {
+  
+  handleNewShelter() {
+    this.shelter.createShelter(this.newShelter).subscribe(res => {
     this.results = res;
-    console.log (newShelter);
+    console.log (this.newShelter);
     this.getShelters();
     });
   }
-  */
-  }
+  
 }
+

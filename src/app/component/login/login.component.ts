@@ -35,12 +35,14 @@ export class LoginComponent implements OnInit {
     }
     this.auth.login(this.user).subscribe(
       (user) => { 
+        console.log (this.user.id);
         this.router.navigate(['/profile'])
       },
       (err) => {
         this.error = (err && err.error) ? err.error : 'Unexpected error, please try again.';
       } 
     );
+ 
   }
 
 }

@@ -3,6 +3,7 @@ export class Shelter {
   sheltername: string;
   direction: string;
   number: number;
+  zipcode: number;
   
 
   constructor(obj: Object = {}) {

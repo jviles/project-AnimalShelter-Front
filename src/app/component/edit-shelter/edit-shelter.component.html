@@ -1,21 +1,21 @@
 <h2> NEW SHELTERS</h2>
 
-<form (ngSubmit)="handleNewShelter(shelterForm)" #shelterForm="ngForm" >
+<form (ngSubmit)="handleNewShelter()" #shelterForm="ngForm" >
 
     <label>Shelter's name:</label>
-    <input type="text" name="sheltername" [(ngModel)]="sheltername">
+    <input type="text" name="sheltername" [(ngModel)]="newShelter.sheltername">
     <label>Direction:</label>
-    <input type="text" name="direction" [(ngModel)]="direction">
+    <input type="text" name="direction" [(ngModel)]="newShelter.direction">
     <label>Number:</label>
-    <input type="text" name="number" [(ngModel)]="number">
+    <input type="text" name="number" [(ngModel)]="newShelter.number">
     <label>ZIP Code:</label>
-    <input type="text" name="zipcode" [(ngModel)]="zipcode">
+    <input type="text" name="zipcode" [(ngModel)]="newShelter.zipcode">
 
   <button type="submit">Add shelter</button>
 </form>
 
-
-<!--<div class="loading" *ngIf="loading">...loading</div>
+<!--
+<div class="loading" *ngIf="loading">...loading</div>
 
 <form *ngIf="!loading" #form="ngForm" [ngClass]="{'has-error': error}" novalidate>
     
