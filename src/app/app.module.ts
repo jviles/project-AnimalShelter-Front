@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { MaterializeModule } from 'angular2-materialize';
 
 import { AgmCoreModule } from '@agm/core';
 
@@ -75,8 +76,9 @@ const routes: Routes = [
     BrowserModule,
     HttpModule,
     FormsModule,
-    RouterModule.forRoot(routes),  //  <!-- "routes" is the array defined above
-    AgmCoreModule.forRoot({apiKey:'AIzaSyDH2gSa8sT1qqiKZHQ6Rdy-sF1U6YaEwnU'})
+    RouterModule.forRoot(routes), 
+    AgmCoreModule.forRoot({apiKey:'AIzaSyDH2gSa8sT1qqiKZHQ6Rdy-sF1U6YaEwnU'}),
+    MaterializeModule
   ],
   providers: [AnimalsService,SheltersService,AuthService],
   bootstrap: [AppComponent]
