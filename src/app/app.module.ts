@@ -28,6 +28,8 @@ import { EditShelterComponent } from './component/edit-shelter/edit-shelter.comp
 import { ShelterlistComponent } from './component/shelterlist/shelterlist.component';
 import { AnimallistComponent } from './component/animallist/animallist.component';
 import { AnimalprofilePageComponent } from './pages/animalprofile-page/animalprofile-page.component';
+import { AnimalCreateComponent } from './component/animal-create/animal-create.component';
+
 
 
 
@@ -65,6 +67,8 @@ const routes: Routes = [
     ShelterlistComponent,
     AnimallistComponent,
     AnimalprofilePageComponent,
+    AnimalCreateComponent,
+    
     
   ],
   imports: [

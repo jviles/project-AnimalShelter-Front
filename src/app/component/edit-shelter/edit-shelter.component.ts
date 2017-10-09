@@ -21,11 +21,11 @@ export class EditShelterComponent implements OnInit {
   @Input() isNew: boolean;
   @Output() onSave = new EventEmitter<string>();
 
-  loading = true; // No entenc molt que vol fer l'Andre amb aquestes variables
-  submitted: boolean; //Suposso que activar i desactivar el Form per assegurar que esta login
+  loading = true; 
+  submitted: boolean; 
   error: string;
 
-  // HERE HERE HERE
+
 
   constructor(
     private shelterService: SheltersService,

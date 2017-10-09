@@ -36,7 +36,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   setUser(user) {
     this.currentUser = user;
     if (user) {
-      // find out iof this user already has a shelter
+      // find out if this user already has a shelter
       this.shelterService.getShelterByUserId(user.id).subscribe((shelter) => {
         this.shelter = shelter;
         this.loading = false;

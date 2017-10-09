@@ -19,8 +19,10 @@ export class AnimalsService {
   }
   // Tinc la Id del animals per desprès relacionar-ho amb el shelter
   // en algun futur ja ho fare ara ja m'estic tornant boig ho copio per tenir-ho
-  get(id) {
-    return this.http.get(`${this.BASE_URL}/animals/${id}`)
+  getAnimalByShelterId(shelterId) {
+    let options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.get(`${this.BASE_URL}/animals/by-shelter`+ shelterId, options)
       .map((res) => res.json());
   }
   //Puto internete que no funciona tinc que piratejar mes xarxes

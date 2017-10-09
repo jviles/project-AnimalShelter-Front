@@ -1,0 +1,27 @@
+<h3>ANIMAL LIST</h3>
+<h4>ADD ANIMAL</h4>
+<form (ngSubmit)="handleNewAnimal(AnimalForm)" #AnimalForm="ngForm" >
+    <label>name</label>
+    <input type="text" name="name" [(ngModel)]="name">
+    <label>image</label>
+    <input type="text" name="image" [(ngModel)]="image">
+    <label>tyepedog</label>
+    <input type="text" name="description" [(ngModel)]="type">
+    <label>age</label>
+    <input type="text" name="description" [(ngModel)]="age">
+    <label>size</label>
+    <input type="text" name="description" [(ngModel)]="size">
+    <label>color</label>
+    <input size="text" name="description" [(ngModel)]="color">
+    <label>sex</label>
+    <input type="text" name="description" [(ngModel)]="sex">
+    <label>breed</label>
+    <input type="text" name="description" [(ngModel)]="breed">
+
+    <label>energy level</label>
+    <input type="text" name="description" [(ngModel)]="energylevel">
+    <label>sociable</label>
+    <input type="text" name="description" [(ngModel)]="sociable">
+
+  <button type="submit">Add</button>
+</form>

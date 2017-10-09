@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, RequestOptions } from '@angular/http';
+import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
@@ -9,10 +10,16 @@ import { Shelter } from '../model/shelter.model';
 
 @Injectable()
 export class SheltersService {
+  private initialized: boolean;
+  private shelter: Shelter;
+  private shelterChange: Subject<Shelter | null> = new Subject();
 
   constructor(private http: Http) { }
+  
+    // Observable user stream
+    shelterChange$ = this.shelterChange.asObservable();
 
-  // HERE HERE HERE
+  
 
   getShelters() {
     let options = new RequestOptions();

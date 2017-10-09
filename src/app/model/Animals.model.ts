@@ -1,4 +1,5 @@
 export class Animals {
+    shelterId: string;
     name: string;
     image: string;
     type: string;
@@ -7,14 +8,7 @@ export class Animals {
     color: string;
     sex: string;
     breed: string;
-    microchip: boolean;
-    vaccinated: boolean;
-    healthcare: boolean;
     energylevel: string;
     autonomy: string;
     sociable: string;
-    hates: string;
-    loves: string;
-    goingoutysociability: string;
-    alittleofmypast: string;
   }
