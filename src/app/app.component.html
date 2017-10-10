@@ -17,24 +17,23 @@
     </nav>   
   </div>  
 </div>-->
-<div class="site-header">
+
 <div class="container">
-  <nav>
+  <nav class="nav-extended ">
     <div class="nav-wrapper">
       <a href="" class="brand-logo center" [routerLink]="['home']">Logo</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a [routerLink]="['info']"> Info </a></li>
-        <li><a [routerLink]="['animals']"> Animals</a></li>
-        <li><a [routerLink]="['shelters']"> Shelters</a></li>
-        <li *ngIf="user"> <a [routerLink]="['profile']">{{user.username}}</a></li>
-        <li *ngIf="user"> <app-logout></app-logout></li>
-        <li *ngIf="!user"> <a [routerLink]="['signup']"> Sign Up</a></li>
-        <li *ngIf="!user"> <a [routerLink]="['login']">Log In</a></li>
+        <li><a [routerLink]="['animals']"> <i class="material-icons">search</i></a></li>
+        <li><a [routerLink]="['shelters']"> <i class="material-icons">home</i></a></li>
+        <li [ngClass]="{loading: loading}" *ngIf="user"> <a [routerLink]="['profile']">{{user.username}}</a></li>
+        <li [ngClass]="{loading: loading}" *ngIf="user"> <app-logout></app-logout></li>
+        <li *ngIf="!user"> <a [routerLink]="['signup']"><i class="material-icons">person_add</i></a></li>
+        <li [ngClass]="{loading: loading}" *ngIf="!user"> <a [routerLink]="['login']">Log In</a></li>
       </ul>
     </div>
   </nav>
-</div>
-</div>
+
 
 
 

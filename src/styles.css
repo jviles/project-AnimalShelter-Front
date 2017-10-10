@@ -35,7 +35,7 @@ body {
 }
 
 .page-title {
-    margin: 0 0 30px;
+    margin: 0 0 50px;
     font-size: 32px;
 }
 
@@ -83,9 +83,12 @@ body {
 
 /* --------------------------------- header --------------------------------- */
 
+.slider {
+
+}
+
 .site-header {
-    overflow: hidden;
-    background-color: white;
+   
 }
 
 .site-header h1 {
@@ -112,11 +115,3 @@ body {
 .site-header nav a {
     padding: 5px 10px;
 }    
-/* --------------------------------- Home Page --------------------------------- */
-
-#left {
-    float: right;
-}
-#right {
-    float: left;
-}
