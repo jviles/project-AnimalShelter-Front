@@ -14,7 +14,7 @@ export class AnimalsService {
   getAnimals() {
     let options = new RequestOptions();
     options.withCredentials = true;    
-    return this.http.get(`${this.BASE_URL}/animals`, options)
+    return this.http.get(`${this.BASE_URL}/animal`, options)
       .map((res) => res.json());
   }
   // Tinc la Id del animals per desprès relacionar-ho amb el shelter
@@ -22,14 +22,16 @@ export class AnimalsService {
   getAnimalByShelterId(shelterId) {
     let options = new RequestOptions();
     options.withCredentials = true;
-    return this.http.get(`${this.BASE_URL}/animals/by-shelter`+ shelterId, options)
+    return this.http.get(`${this.BASE_URL}/animal/by-shelter`+ shelterId, options)
       .map((res) => res.json());
   }
-  //Puto internete que no funciona tinc que piratejar mes xarxes
+  
   //Aquest per ficar nous animalets
-  postNewAnimal(Animal) {
-    console.log(Animal);
-    return this.http.post(`${this.BASE_URL}/animals`, Animals)
+  postNewAnimal(animal:Animals) {
+    let options = new RequestOptions();
+    options.withCredentials = true;
+    console.log("post",animal);
+    return this.http.post(`${this.BASE_URL}/animal`, animal,options)
     .map((res) => res.json());
   }
 }

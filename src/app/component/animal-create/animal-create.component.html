@@ -1,21 +1,21 @@
 <h3>ANIMAL LIST</h3>
 <h4>ADD ANIMAL</h4>
-<form (ngSubmit)="handleNewAnimal(AnimalForm)" #AnimalForm="ngForm" >
+<form (ngSubmit)="handleNewAnimal()" #form="ngForm" >
     <label>name</label>
-    <input type="text" name="name" [(ngModel)]="name">
+    <input type="text" name="name" [(ngModel)]="animal.name">
     <label>image</label>
-    <input type="text" name="image" [(ngModel)]="image">
-    <label>tyepe</label>
-    <input type="text" name="description" [(ngModel)]="type">
+    <input type="text" name="image" [(ngModel)]="animal.image">
+    <label>type</label>
+    <input type="text" name="animaltype" [(ngModel)]="animal.type">
     <label>age</label>
-    <input type="text" name="description" [(ngModel)]="age">
+    <input type="text" name="age" [(ngModel)]="animal.age">
     <label>size</label>
-    <input type="text" name="description" [(ngModel)]="size">
+    <input type="text" name="size" [(ngModel)]="animal.size">
     <label>color</label>
-    <input size="text" name="description" [(ngModel)]="color">
+    <input size="text" name="color" [(ngModel)]="animal.color">
     <label>sex</label>
-    <input type="text" name="description" [(ngModel)]="sex">
+    <input type="text" name="sex" [(ngModel)]="animal.sex">
     <label>breed</label>
-    <input type="text" name="description" [(ngModel)]="breed">
+    <input type="text" name="breed" [(ngModel)]="animal.breed">
   <button type="submit">Add</button>
 </form>

@@ -16,7 +16,7 @@ export class AnimalCreateComponent implements OnInit {
   @Input() isNew: boolean;
   @Output() onSave = new EventEmitter();
 
-  animal: Animals;
+  animal: Animals= new Animals ();
 
   
   results: string;
