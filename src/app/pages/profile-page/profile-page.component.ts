@@ -3,8 +3,13 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { SheltersService } from '../../services/shelters.service';
 import { AuthService } from '../../services/auth.service';
+import { AnimalsService } from '../../services/animals.service';
+
 import { Shelter } from '../../model/shelter.model';
 import { User } from '../../model/user.model';
+import { Animals } from '../../model/Animals.model';
+
+
 
 @Component({
   selector: 'app-profile-page',
@@ -19,9 +24,15 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   shelter: Shelter;
   newShelter: Shelter;
 
+  animalssubscription = [];
+  currentShelter: Shelter;
+  animal: Animals;
+  newAnimal: Animals;
+
   constructor(
     private authService: AuthService,
     private shelterService: SheltersService,
+    private animalService:AnimalsService
   ) { }
 
   ngOnInit() {
@@ -31,6 +42,9 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     // works only when refreshing the page
     let subscription = this.authService.userChange$.subscribe((user) => this.setUser(user));
     this.subscriptions.push(subscription);
+    //Include animal
+    let animalsubscription = this.shelterService.shelterChange$.subscribe((shelter) => this.setShelter(shelter));
+    this.animalssubscription.push(animalsubscription);
   }
 
   setUser(user) {
@@ -53,8 +67,28 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     }
   }
 
+  setShelter(shelter) {
+    this.currentShelter = shelter;
+    if (shelter) {
+      
+      this.animalService.getAnimalByShelterId(shelter.id).subscribe((animal) => {
+        this.animal = animal;
+        this.loading = false;
+        if (!this.shelter) {
+          this.newAnimal = new Animals();
+        }
+      });
+    }
+  }
+  /*Quina diferencia hi ha entre el save emiter i el $*/
+  handleNewAnimal() {
+    if (!this.animal) {
+      this.animal = this.newAnimal;
+    }
+  }
+  
   ngOnDestroy() {
-    // unsubscribe if we navigate awawy from this page
+    // unsubscribe if we navigate away from this page
     this.subscriptions.forEach((subscription) => subscription.unsubscribe());
   }
 

@@ -8,7 +8,5 @@ export class Animals {
     color: string;
     sex: string;
     breed: string;
-    energylevel: string;
-    autonomy: string;
-    sociable: string;
+
   }

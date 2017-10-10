@@ -12,15 +12,12 @@ import { Shelter } from '../../model/shelter.model';
 })
 export class AnimalCreateComponent implements OnInit {
 
-  @Input() shelter: Shelter;
+  @Input() shelterId: Shelter;
   @Input() isNew: boolean;
-  @Output() onSave = new EventEmitter<string>();
+  @Output() onSave = new EventEmitter();
 
-  loading = false;
-  animalssubscription = [];
-  currentShelter: Shelter;
   animal: Animals;
-  newAnimal: Animals;
+
   
   results: string;
   constructor(
@@ -31,25 +28,10 @@ export class AnimalCreateComponent implements OnInit {
 
   ngOnInit() {
 
-    let animalsubscription = this.shelterService.shelterChange$.subscribe((shelter) => this.setShelter(shelter));
-    this.animalssubscription.push(animalsubscription);
+   
   }
 
-  setShelter(shelter) {
-    this.currentShelter = shelter;
-    if (shelter) {
-      
-      this.animalService.getAnimalByShelterId(shelter.id).subscribe((animal) => {
-        this.animal = animal;
-        this.loading = false;
-        if (!this.shelter) {
-          this.newAnimal = new Animals();
-        }
-      });
-    }
-  }
-
-  handleNewAnimal(form) {
+ /* handleNewAnimal(form) {
     const newAnimal = {
       name: form.value.name,
       image: form.value.image,
@@ -64,15 +46,20 @@ export class AnimalCreateComponent implements OnInit {
       sociable: form.value.sociable,
     
     };
-    /*this.animalService.postNewAnimal(newAnimal).subscribe(res => {
+    this.animalService.postNewAnimal(newAnimal).subscribe(res => {
     this.results = res;
     console.log (newAnimal);  
     });*/
+    
+    //Aqui utilitzes l'Output que tens a profile
+
+  handleNewAnimal() {
+
     if (this.isNew) {
-      this.animalService.postNewAnimal(this.animal).subscribe(() => {
-        console.log('SAVED');
-        this.onSave.emit();
-      });
+        this.animalService.postNewAnimal(this.animal).subscribe(() => {
+          console.log('SAVED');
+          this.onSave.emit();
+        });
   }
 }
 }

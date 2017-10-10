@@ -7,11 +7,76 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
  
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-
+<script>
+    $(document).ready(function(){
+    $('.slider').slider();
+  });
+</script>
 </head>
 <body>
-  <app-root></app-root>
-
+    <app-root></app-root>
+  <div class="slider">
+      
+      <ul class="slides">
+        <li>
+          <img src="http://www.abc.es/media/recreo/2017/06/30/gato-ronronear-kcaD--620x349@abc.jpg"> <!-- random image -->
+          <div class="caption center-align">
+            <h3>This is our big Tagline!</h3>
+            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          </div>
+        </li>
+        <li>
+          <img src="https://misanimales.com/wp-content/uploads/2015/02/perro-feliz-corriendo.jpg"> <!-- random image -->
+          <div class="caption left-align">
+            <h3>Left Aligned Caption</h3>
+            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          </div>
+        </li>
+        <li>
+          <img src="http://independizarte.com/wp-content/uploads/2017/05/perro-y-gato-amigos1.jpeg"> <!-- random image -->
+          <div class="caption right-align">
+            <h3>Right Aligned Caption</h3>
+            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          </div>
+        </li>
+        <li>
+          <img src="https://www.anipedia.net/imagenes/gatos-persas-250x150.jpg"> <!-- random image -->
+          <div class="caption center-align">
+            <h3>This is our big Tagline!</h3>
+            <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          </div>
+        </li>
+      </ul>
+    </div>
 </body>
+
+<footer class="page-footer">
+
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Footer Content</h5>
+        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+          <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copyright">
+    <div class="container">
+    © 2014 Copyright Text
+    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+
+</footer>
 
 </html>

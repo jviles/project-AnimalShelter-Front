@@ -42,11 +42,11 @@ body {
 
 /* --------------------------------- forms --------------------------------- */
 
-button {
+/*button {
     min-width: 100px;
     padding: 5px 40px;
     font-size: 18px;
-}
+}*/
 
 .form-group {
     margin-bottom: 20px;
@@ -113,10 +113,7 @@ button {
     padding: 5px 10px;
 }    
 /* --------------------------------- Home Page --------------------------------- */
-.containerhome page{
-color:blue;
 
-}
 #left {
     float: right;
 }
