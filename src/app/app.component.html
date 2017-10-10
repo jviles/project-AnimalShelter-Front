@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="site-header">
+<!--<div class="site-header">
   <div class="container">
     <h1 >
         <a [routerLink]="['home']"> Furry Friends </a> 
@@ -16,7 +16,28 @@
       </ul>
     </nav>   
   </div>  
+</div>-->
+<div class="site-header">
+<div class="container">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="" class="brand-logo center" [routerLink]="['home']">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a [routerLink]="['info']"> Info </a></li>
+        <li><a [routerLink]="['animals']"> Animals</a></li>
+        <li><a [routerLink]="['shelters']"> Shelters</a></li>
+        <li *ngIf="user"> <a [routerLink]="['profile']">{{user.username}}</a></li>
+        <li *ngIf="user"> <app-logout></app-logout></li>
+        <li *ngIf="!user"> <a [routerLink]="['signup']"> Sign Up</a></li>
+        <li *ngIf="!user"> <a [routerLink]="['login']">Log In</a></li>
+      </ul>
+    </div>
+  </nav>
 </div>
+</div>
+
+
+
 
 <router-outlet></router-outlet>
 
