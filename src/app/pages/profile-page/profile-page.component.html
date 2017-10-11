@@ -1,8 +1,8 @@
 <div class="page login">
     <div class="container" *ngIf="!loading">
 
-        <h3 class="page-title">Edit your profile</h3>    
-        <app-edit-profile></app-edit-profile>   
+        <!--<h3 class="page-title">Edit your profile</h3>    
+        <app-edit-profile></app-edit-profile> -->  
     
         <div *ngIf="!shelter">
             <h3 class="page-title">Enter your Shelter</h3>
@@ -14,14 +14,12 @@
             <!--app-edit-shelter [shelter]="shelter"></app-edit-shelter--> 
             <!--app-map></app-map-->
             <h3 class="page-title">Your Shelter: {{shelter.name}}</h3>
-            
-            <h3 class="page-title">Add Animals</h3>
-            <p>ID:{{shelter._id}}</p>
-            
+                                    
             <app-animal-create [shelterId]="shelter._id" [isNew]="true" (onSave)="handleNewAnimal($event)"></app-animal-create>
             
             <h3 class="page-title">Animal List</h3>
-            <app-animallist [animals]="animals"></app-animallist>      
+            <!--<app-animallist [animals]="animals"></app-animallist>-->
+            <app-animallist></app-animallist>     
         </div>
     </div>
 </div>

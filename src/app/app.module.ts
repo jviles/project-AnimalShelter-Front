@@ -35,6 +35,7 @@ import { AnimalCreateComponent } from './component/animal-create/animal-create.c
 
 
 
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home',  component: HomePageComponent },
@@ -69,6 +70,7 @@ const routes: Routes = [
     AnimallistComponent,
     AnimalprofilePageComponent,
     AnimalCreateComponent,
+    
     
     
   ],

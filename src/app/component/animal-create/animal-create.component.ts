@@ -28,32 +28,8 @@ export class AnimalCreateComponent implements OnInit {
 
   ngOnInit() {
 
-   
-
-   
   }
 
- /* handleNewAnimal(form) {
-    const newAnimal = {
-      name: form.value.name,
-      image: form.value.image,
-      type: form.value.type,
-      age: form.value.age,
-      size: form.value.size,
-      color: form.value.color,
-      sex: form.value.sex,
-      breed: form.value.breed,
-    
-      energylevel: form.value.energylevel,
-      sociable: form.value.sociable,
-    
-    };
-    this.animalService.postNewAnimal(newAnimal).subscribe(res => {
-    this.results = res;
-    console.log (newAnimal);  
-    });*/
-    
-    //Aqui utilitzes l'Output que tens a profile
 
   handleNewAnimal() {
 

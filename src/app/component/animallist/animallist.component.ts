@@ -1,6 +1,5 @@
-import { Component, OnInit,Input } from '@angular/core';
-import { SheltersService } from '../../services/shelters.service';
-import { AuthService } from '../../services/auth.service';
+import { Component, OnInit } from '@angular/core';
+
 import { AnimalsService } from '../../services/animals.service';
 import { Animals } from '../../model/Animals.model';
 
@@ -12,7 +11,7 @@ import { Animals } from '../../model/Animals.model';
   styleUrls: ['./animallist.component.css']
 })
 export class AnimallistComponent implements OnInit {
-  @Input() animals: Animals;
+  
   animalList: object[];
   
   constructor(
