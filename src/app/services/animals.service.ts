@@ -17,8 +17,7 @@ export class AnimalsService {
     return this.http.get(`${this.BASE_URL}/animal`, options)
       .map((res) => res.json());
   }
-  // Tinc la Id del animals per desprès relacionar-ho amb el shelter
-  // en algun futur ja ho fare ara ja m'estic tornant boig ho copio per tenir-ho
+
   getAnimalByShelterId(shelterId) {
     let options = new RequestOptions();
     options.withCredentials = true;

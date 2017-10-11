@@ -29,7 +29,7 @@
         <li [ngClass]="{loading: loading}" *ngIf="user"> <a [routerLink]="['profile']">{{user.username}}</a></li>
         <li [ngClass]="{loading: loading}" *ngIf="user"> <app-logout></app-logout></li>
         <li *ngIf="!user"> <a [routerLink]="['signup']"><i class="material-icons">person_add</i></a></li>
-        <li [ngClass]="{loading: loading}" *ngIf="!user"> <a [routerLink]="['login']">Log In</a></li>
+        <li [ngClass]="{loading: loading}" *ngIf="!user"> <a [routerLink]="['login']"><i class="material-icons">person</i></a></li>
       </ul>
     </div>
   </nav>

@@ -12,17 +12,20 @@ import { Animals } from '../../model/Animals.model';
   styleUrls: ['./animallist.component.css']
 })
 export class AnimallistComponent implements OnInit {
-  
- 
-
-  constructor(private shelter:SheltersService, private animals:AnimalsService) { }
+  @Input() animals: Animals;
   animalList: object[];
+  
+  constructor(
+    
+    private animalsService:AnimalsService)
+   { }
+  
   ngOnInit() {
     this.getAnimals();
   }
 
   getAnimals(){
-    this.animals.getAnimals().subscribe((Animals)=> {
+    this.animalsService.getAnimals().subscribe((Animals)=> {
       this.animalList=Animals;
     });
   }
