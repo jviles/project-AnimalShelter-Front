@@ -22,6 +22,8 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   subscriptions = [];
   currentUser: User;
   shelter: Shelter;
+  shelterId: string;
+  
   
   newShelter: Shelter;
 
@@ -55,6 +57,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
       // find out if this user already has a shelter
       this.shelterService.getShelterByUserId(user.id).subscribe((shelter) => {
         this.shelter = shelter;
+        this.shelterId = shelter._id;
         this.loading = false;
         if (!this.shelter) {
           this.newShelter = new Shelter();
@@ -71,6 +74,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
 
   setShelter(shelter) {
     this.currentShelter = shelter;
+    
     
     if (shelter) {
       

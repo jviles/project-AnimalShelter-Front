@@ -18,7 +18,7 @@ export class AnimalsService {
       .map((res) => res.json());
   }
 
-  getAnimalByShelterId(shelterId) {
+  getAnimalByShelterId(shelterId:string) {
     let options = new RequestOptions();
     options.withCredentials = true;
     return this.http.get(`${this.BASE_URL}/animal/by-shelter`+ shelterId, options)

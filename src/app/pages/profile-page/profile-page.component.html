@@ -15,11 +15,11 @@
             <!--app-map></app-map-->
             <h3 class="page-title">Your Shelter: {{shelter.name}}</h3>
                                     
-            <app-animal-create [shelterId]="shelter._id" [isNew]="true" (onSave)="handleNewAnimal($event)"></app-animal-create>
+            <app-animal-create [shelterId]="shelterId" [isNew]="true" (onSave)="handleNewAnimal($event)"></app-animal-create>
             
             <h3 class="page-title">Animal List</h3>
-            <!--<app-animallist [animals]="animals"></app-animallist>-->
-            <app-animallist></app-animallist>     
+            <app-animals-shelter [animal]="animal" ></app-animals-shelter> 
+            <!--<app-animallist></app-animallist> -->   
         </div>
     </div>
 </div>

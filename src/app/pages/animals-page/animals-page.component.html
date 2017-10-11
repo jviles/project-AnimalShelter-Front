@@ -3,20 +3,37 @@
  
     <ul>
       <li *ngFor="let animal of animals">
-        name: {{animal.name}}<br>
-        image:{{animal.image}}<br>
-        type: {{animal.type}} <br>
-        age: {{animal.age}}<br>
-        size: {{animal.size}}<br>
-        color: {{animal.color}}<br>
-        sex: {{animal.sex}}<br>
-        breed: {{animal.breed}}<br>
+        
+        image:{{animal.image}}
+      
 
+        <div class="card small">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="images/office.jpg">
+            </div>
+
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">name: {{animal.name}}<br><i class="material-icons right">more_vert</i></span>
+              <p><a href="#">ADOPT</a></p>
+            </div>
+
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                <p>type: {{animal.type}} <br>
+                age: {{animal.age}}<br>
+                size: {{animal.size}}<br>
+                color: {{animal.color}}<br>
+                sex: {{animal.sex}}<br>
+                breed: {{animal.breed}}</p>
+            </div>
+          </div>
         
       </li>
     </ul>
   </div>  
 </div>
-<hr>
 
-<hr>
+
+
+
+            

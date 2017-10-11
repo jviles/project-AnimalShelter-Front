@@ -14,7 +14,7 @@ export class AnimalCreateComponent implements OnInit {
 
   @Input() shelterId: string;
   @Input() isNew: boolean;
-  @Output() onSave = new EventEmitter();
+  @Output() onSave = new EventEmitter<object>();
 
   animal: Animals= new Animals ();
 
@@ -35,9 +35,9 @@ export class AnimalCreateComponent implements OnInit {
 
     if (this.isNew) {
       this.animal.shelterId = this.shelterId;
-        this.animalService.postNewAnimal(this.animal).subscribe(() => {
+        this.animalService.postNewAnimal(this.animal).subscribe((res) => {
           console.log('SAVED');
-          this.onSave.emit();
+          this.onSave.emit(res);
         });
   }
 }

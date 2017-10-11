@@ -30,6 +30,7 @@ import { ShelterlistComponent } from './component/shelterlist/shelterlist.compon
 import { AnimallistComponent } from './component/animallist/animallist.component';
 import { AnimalprofilePageComponent } from './pages/animalprofile-page/animalprofile-page.component';
 import { AnimalCreateComponent } from './component/animal-create/animal-create.component';
+import { AnimalsShelterComponent } from './component/animals-shelter/animals-shelter.component';
 
 
 
@@ -70,6 +71,7 @@ const routes: Routes = [
     AnimallistComponent,
     AnimalprofilePageComponent,
     AnimalCreateComponent,
+    AnimalsShelterComponent,
     
     
     
