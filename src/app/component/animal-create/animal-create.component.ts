@@ -12,7 +12,7 @@ import { Shelter } from '../../model/shelter.model';
 })
 export class AnimalCreateComponent implements OnInit {
 
-  @Input() shelterId: Shelter;
+  @Input() shelterId: string;
   @Input() isNew: boolean;
   @Output() onSave = new EventEmitter();
 
@@ -27,6 +27,8 @@ export class AnimalCreateComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+
+   
 
    
   }
@@ -56,6 +58,7 @@ export class AnimalCreateComponent implements OnInit {
   handleNewAnimal() {
 
     if (this.isNew) {
+      this.animal.shelterId = this.shelterId;
         this.animalService.postNewAnimal(this.animal).subscribe(() => {
           console.log('SAVED');
           this.onSave.emit();

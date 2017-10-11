@@ -9,4 +9,5 @@ export class Animals {
     sex: string;
     breed: string;
 
-  }
+ 
+}

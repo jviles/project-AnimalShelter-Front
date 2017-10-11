@@ -22,6 +22,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   subscriptions = [];
   currentUser: User;
   shelter: Shelter;
+  
   newShelter: Shelter;
 
   animalssubscription = [];
@@ -49,6 +50,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
 
   setUser(user) {
     this.currentUser = user;
+    
     if (user) {
       // find out if this user already has a shelter
       this.shelterService.getShelterByUserId(user.id).subscribe((shelter) => {
@@ -69,6 +71,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
 
   setShelter(shelter) {
     this.currentShelter = shelter;
+    
     if (shelter) {
       
       this.animalService.getAnimalByShelterId(shelter.id).subscribe((animal) => {

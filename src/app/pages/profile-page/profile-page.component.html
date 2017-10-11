@@ -16,8 +16,10 @@
             <h3 class="page-title">Your Shelter: {{shelter.name}}</h3>
             
             <h3 class="page-title">Add Animals</h3>
-            <app-animal-create [shelterId]="shelter.id" [isNew]="true" (onSave)="handleNewAnimal($event)"></app-animal-create>
-
+            <p>ID:{{shelter._id}}</p>
+            
+            <app-animal-create [shelterId]="shelter._id" [isNew]="true" (onSave)="handleNewAnimal($event)"></app-animal-create>
+            
             <h3 class="page-title">Animal List</h3>
             <app-animallist [animals]="animals"></app-animallist>      
         </div>
