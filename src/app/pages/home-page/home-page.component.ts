@@ -1,4 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+declare var $ ;
+declare var jQuery;
+
+
+$(document).ready(function(){
+$('.slider').slider({
+  indicators:false
+});
+});
+
 
 @Component({
   selector: 'app-home-page',
