@@ -19,7 +19,7 @@ export class AnimalCreateComponent implements OnInit {
   animal: Animals= new Animals ();
 
   
-  results: string;
+  
   constructor(
     private animalService:AnimalsService,
     private shelterService: SheltersService

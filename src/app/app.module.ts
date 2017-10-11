@@ -31,6 +31,8 @@ import { AnimallistComponent } from './component/animallist/animallist.component
 import { AnimalprofilePageComponent } from './pages/animalprofile-page/animalprofile-page.component';
 import { AnimalCreateComponent } from './component/animal-create/animal-create.component';
 import { AnimalsShelterComponent } from './component/animals-shelter/animals-shelter.component';
+import { AdoptAnimalComponent } from './component/adopt-animal/adopt-animal.component';
+
 
 
 
@@ -46,7 +48,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'profile', component: ProfilePageComponent },
-  { path: 'animalprofile', component: AnimalprofilePageComponent },
+  { path: 'animals/animalprofile', component: AnimalprofilePageComponent },
   
   
 ];
@@ -72,6 +74,8 @@ const routes: Routes = [
     AnimalprofilePageComponent,
     AnimalCreateComponent,
     AnimalsShelterComponent,
+    AdoptAnimalComponent,
+    
     
     
     

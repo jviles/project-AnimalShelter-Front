@@ -1,0 +1,13 @@
+<h4>ADOPT ANIMAL</h4>
+
+<form (ngSubmit)="handleNewAnimal()" #form="ngForm" >
+    <label>name</label>
+    <input type="text" name="name" [(ngModel)]="adopter.name">
+    <label>surname</label>
+    <input type="text" name="surname" [(ngModel)]="adopter.surname">
+    <label>email</label>
+    <input type="text" name="email" [(ngModel)]="adopter.email">
+    <label>phone number</label>
+    <input type="text" name="phonenumber" [(ngModel)]="adopter.phonenumber">
+  <button type="submit">Add</button>
+</form>

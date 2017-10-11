@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { Animals } from '../model/Animals.model';
 
-//const baseUrl = 'http://localhost:3000'; Tin problemes amb aquest
+
 
 @Injectable()
 export class AnimalsService {
