@@ -78,7 +78,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     
     if (shelter) {
       
-      this.animalService.getAnimalByShelterId(shelter.id).subscribe((animal) => {
+      this.animalService.getAnimalByShelterId(shelter._id).subscribe((animal) => {
         this.animal = animal;
         this.loading = false;
         if (!this.shelter) {
@@ -87,7 +87,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
       });
     }
   }
-  /*Quina diferencia hi ha entre el save emiter i el $*/
+  
   handleNewAnimal() {
     if (!this.animal) {
       this.animal = this.newAnimal;

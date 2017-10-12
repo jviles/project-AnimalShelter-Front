@@ -9,23 +9,27 @@ import { AnimalsService } from '../../services/animals.service';
   styleUrls: ['./animals-shelter.component.css']
 })
 export class AnimalsShelterComponent implements OnInit {
-  @Input() animal: Animals;
-
-  animalList: object[];
-  
+  @Input() shelterId: string;
+  animalList: Array<Object[]>;
+ 
 
   constructor(
     private animalsService:AnimalsService
   ) { }
 
   ngOnInit() {
-    this.getAnimalByShelterId();
+
+   this.getAnimalByShelterId();
+     
   }
 
   getAnimalByShelterId(){
-    this.animalsService.getAnimalByShelterId(this.animal.shelterId).subscribe((Animals)=> {
-      this.animalList=Animals;
+    this.animalsService.getAnimalByShelterId(this.shelterId).subscribe((Animals)=> {
+      this.animalList = Animals;
+      console.log(this.animalList);
+      console.log (this.shelterId);
     });
+    
   }
 
 }
