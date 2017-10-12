@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { AnimalsService } from './services/animals.service';
 import { SheltersService } from './services/shelters.service';
 import { AuthService } from './services/auth.service';
+import { AdopterserviceService } from './services/adopterservice.service';
 
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { InformationPageComponent } from './pages/information-page/information-page.component';
@@ -32,6 +33,7 @@ import { AnimalprofilePageComponent } from './pages/animalprofile-page/animalpro
 import { AnimalCreateComponent } from './component/animal-create/animal-create.component';
 import { AnimalsShelterComponent } from './component/animals-shelter/animals-shelter.component';
 import { AdoptAnimalComponent } from './component/adopt-animal/adopt-animal.component';
+
 
 
 
@@ -88,7 +90,7 @@ const routes: Routes = [
     AgmCoreModule.forRoot({apiKey:'AIzaSyDH2gSa8sT1qqiKZHQ6Rdy-sF1U6YaEwnU'}),
     MaterializeModule
   ],
-  providers: [AnimalsService,SheltersService,AuthService],
+  providers: [AnimalsService,SheltersService,AuthService,AdopterserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
